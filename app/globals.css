@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/* Design tokens. Tailwind v4 turns each --color-* into utilities: bg-ivory, text-espresso, border-taupe… */
+@theme {
+  --color-ivory: #f7f5f0;
+  --color-espresso: #302b28;
+  --color-muted: #6b625b; /* body-secondary text; taupe is too light for text on ivory */
+  --color-taupe: #c8bfb3; /* hairlines and dividers only */
+  --color-sand: #e6e0d7; /* photo placeholder ground */
+  --color-blue: #477d9e;
+  --color-burgundy: #713f43;
+
+  --font-serif: "Instrument Serif", "Times New Roman", serif;
+  --font-sans: "DM Sans Variable", "DM Sans", system-ui, sans-serif;
+
+  --breakpoint-xs: 30rem;
+}
+
+@layer base {
+  html {
+    background: var(--color-ivory);
+    color: var(--color-espresso);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  ::selection {
+    background: var(--color-espresso);
+    color: var(--color-ivory);
+  }
+  :focus-visible {
+    outline: 1px solid var(--color-espresso);
+    outline-offset: 4px;
+  }
+}
+
+@layer components {
+  /* Small uppercase navigation / meta text */
+  .caps {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  /* Understated text link with an underline that draws in on hover */
+  .quiet-link {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 250ms ease;
+  }
+  .quiet-link:hover,
+  .quiet-link:focus-visible {
+    background-size: 100% 1px;
+  }
+}
+
+/* Long-form text from MDX: notes, essays, case studies */
+@layer components {
+  .prose {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: color-mix(in srgb, var(--color-espresso) 88%, transparent);
+  }
+  .prose > * + * { margin-top: 1.25em; }
+  .prose h2 {
+    margin-top: 2.6em;
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    line-height: 1.1;
+    color: var(--color-espresso);
+    scroll-margin-top: 2rem;
+  }
+  .prose h3 {
+    margin-top: 2em;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: var(--color-espresso);
+  }
+  .prose a {
+    color: var(--color-blue);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .prose strong { font-weight: 600; color: var(--color-espresso); }
+  .prose ul { list-style: disc; padding-left: 1.25em; }
+  .prose ol { list-style: decimal; padding-left: 1.25em; }
+  .prose li + li { margin-top: 0.4em; }
+  .prose li::marker { color: var(--color-muted); }
+  .prose blockquote {
+    border-left: 1px solid var(--color-taupe);
+    padding-left: 1.5em;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    line-height: 1.35;
+    color: var(--color-espresso);
+  }
+  .prose code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.875em;
+    background: var(--color-sand);
+    padding: 0.1em 0.35em;
+  }
+  .prose pre {
+    overflow-x: auto;
+    background: var(--color-espresso);
+    color: var(--color-ivory);
+    padding: 1.25rem 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+  .prose pre code { background: none; padding: 0; font-size: inherit; }
+  .prose hr { border: 0; border-top: 1px solid var(--color-taupe); margin: 3em 0; }
+
+  /* Case studies: number each section 01, 02, 03… like the mockup */
+  .prose-numbered { counter-reset: section; }
+  .prose-numbered h2 { counter-increment: section; }
+  .prose-numbered h2::before {
+    content: counter(section, decimal-leading-zero);
+    margin-right: 1.25rem;
+    color: var(--color-muted);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
