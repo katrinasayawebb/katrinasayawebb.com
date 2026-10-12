@@ -40,7 +40,7 @@ export const pillars = [
     title: "What I'm making.",
     intro: "Tools, systems, and experiments in Python, SQL, automation, and AI.",
     portrait: {
-      src: "/images/portraits/build.jpg",
+      src: "",
       focus: "50% 28%",
       alt: "Black-and-white portrait of Katrina Saya Webb in a dark suit, laughing, seated in a wooden armchair",
       label: "Build portrait",
@@ -55,7 +55,7 @@ export const pillars = [
     title: "What I'm figuring out.",
     intro: "Notes on systems thinking, engineering concepts, debugging, and learning to build.",
     portrait: {
-      src: "/images/portraits/learn.jpg",
+      src: "",
       focus: "55% 30%",
       alt: "Portrait of Katrina Saya Webb in a white shirt in golden light, looking off to the side",
       label: "Learn portrait",
@@ -70,7 +70,7 @@ export const pillars = [
     title: "What inspires me.",
     intro: "Japan, travel, fashion, design, architecture, cities, and everyday observations.",
     portrait: {
-      src: "/images/portraits/live.jpg",
+      src: "",
       focus: "50% 30%",
       alt: "Portrait of Katrina Saya Webb outdoors against a wide blue sky",
       label: "Live portrait",
@@ -85,7 +85,7 @@ export const pillars = [
     title: "What I'm bringing into the world.",
     intro: "Independent and creative projects. Right now, that means AWARÉ.",
     portrait: {
-      src: "/images/founder-portrait.jpg",
+      src: "",
       focus: "50% 30%",
       alt: "Portrait of Katrina Saya Webb in a black blazer against a white wall",
       label: "Create portrait",
@@ -99,7 +99,7 @@ export const pillars = [
   line: string;
   title: string;
   intro: string;
-  portrait: Photo; // large photo of you at the top of the pillar page; "" = text-only header
+  portrait: Photo; // large photo at the top of the pillar page. src "" = text-only header (current). Files are kept in public/images/portraits and founder-portrait.jpg to restore later.
   photo: Photo; // small homepage thumbnail
 }>;
 
