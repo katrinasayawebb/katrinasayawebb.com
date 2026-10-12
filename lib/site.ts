@@ -39,7 +39,12 @@ export const pillars = [
     line: "Tools, systems, and experiments.",
     title: "What I'm making.",
     intro: "Tools, systems, and experiments in Python, SQL, automation, and AI.",
-    portrait: { src: "", alt: "Portrait of Katrina Saya Webb", label: "Build portrait" }, // e.g. at a desk or laptop
+    portrait: {
+      src: "/images/portraits/build.jpg",
+      focus: "50% 28%",
+      alt: "Black-and-white portrait of Katrina Saya Webb in a dark suit, laughing, seated in a wooden armchair",
+      label: "Build portrait",
+    },
     photo: { src: "/images/pillars/build.jpg", alt: "A snake plant and a cane chair beside a desk with a closed laptop, in late afternoon light", label: "Build — desk or laptop still life" },
   },
   {
@@ -49,7 +54,12 @@ export const pillars = [
     line: "Notes from the learning process.",
     title: "What I'm figuring out.",
     intro: "Notes on systems thinking, engineering concepts, debugging, and learning to build.",
-    portrait: { src: "", alt: "Portrait of Katrina Saya Webb", label: "Learn portrait" }, // e.g. reading or writing
+    portrait: {
+      src: "/images/portraits/learn.jpg",
+      focus: "55% 30%",
+      alt: "Portrait of Katrina Saya Webb in a white shirt in golden light, looking off to the side",
+      label: "Learn portrait",
+    },
     photo: { src: "/images/pillars/learn.jpg", alt: "An open kraft-paper notebook with a pen and a cup of black coffee on a dark marble table", label: "Learn — notebook or reading" },
   },
   {
@@ -59,7 +69,12 @@ export const pillars = [
     line: "Places, ideas, and everyday life.",
     title: "What inspires me.",
     intro: "Japan, travel, fashion, design, architecture, cities, and everyday observations.",
-    portrait: { src: "", alt: "Portrait of Katrina Saya Webb", label: "Live portrait" }, // e.g. travel or the city
+    portrait: {
+      src: "/images/portraits/live.jpg",
+      focus: "84% 50%",
+      alt: "Portrait of Katrina Saya Webb outdoors against a wide blue sky",
+      label: "Live portrait",
+    },
     photo: { src: "/images/pillars/live.jpg", alt: "Rice fields seen through the window of a Japanese local train, above a red bench seat", label: "Live — Japan or travel" },
   },
   {
