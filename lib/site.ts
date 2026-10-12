@@ -71,7 +71,7 @@ export const pillars = [
     intro: "Japan, travel, fashion, design, architecture, cities, and everyday observations.",
     portrait: {
       src: "/images/portraits/live.jpg",
-      focus: "84% 50%",
+      focus: "28% 30%",
       alt: "Portrait of Katrina Saya Webb outdoors against a wide blue sky",
       label: "Live portrait",
     },
