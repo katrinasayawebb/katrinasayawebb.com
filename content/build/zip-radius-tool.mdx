@@ -1,0 +1,65 @@
+---
+title: ZIP Radius Tool
+summary: A Streamlit app that turns a spreadsheet of locations into a targeting-ready list of ZIP codes within a set radius, using U.S. Census boundary data.
+tags: [Python, Streamlit, Geospatial]
+order: 2
+image: /images/build/zip-radius-map.jpg
+imageAlt: "Illustrative map of San Francisco with radius circles drawn around four locations and the ZIP codes they overlap"
+imageLabel: Project image or screenshot
+github: ""
+---
+
+## The why
+
+*What problem was worth solving?*
+
+Finding the ZIP codes within a set radius of multiple locations was a manual, repetitive process that was hard to scale.
+
+I wanted to automate geographic targeting: turn a spreadsheet of latitude and longitude coordinates into a targeting-ready list of ZIP codes.
+
+**Success:** a repeatable workflow that processes multiple locations, identifies the ZIP boundaries each radius touches, and exports the results to Excel.
+
+## The work
+
+*What did I build, and how?*
+
+A Python tool that matches locations to ZIP Code Tabulation Areas (ZCTAs) using U.S. Census geographic boundary data.
+
+**Tools:** Python, openpyxl, Streamlit, and U.S. Census ZCTA data.
+
+The workflow:
+
+1. Reads and validates location data from Excel.
+2. Loads the Census ZIP boundary polygons.
+3. Identifies every ZIP boundary that intersects a user-defined radius.
+4. Exports a formatted Excel workbook with location summaries, detailed matches, and deduplicated ZIP codes.
+
+**Key decisions:**
+
+- **Boundaries, not centroids.** Matching on ZIP boundary intersections rather than ZIP center points captures partial geographic overlap, so a ZIP that crosses into the radius isn't missed.
+- **Bounding-box filtering.** A quick rectangular pre-filter rules out distant ZIPs before running the more expensive distance calculations.
+- **A Streamlit interface.** People can upload a file, choose a radius, and download the results without touching Python code.
+
+## The win
+
+*What worked, and how do I know?*
+
+A locally hosted Streamlit app that converts multiple locations into a targeting-ready Excel workbook. The output has three tabs:
+
+- **Summary:** ZIP codes and counts by location.
+- **Detailed ZIPs:** each individual match, with its distance to the ZIP boundary.
+- **Zip Codes:** a deduplicated list formatted for campaign targeting.
+
+The app is a reusable workflow with input validation and error handling.
+
+**Impact:** the app works locally. Processing accuracy and time savings haven't been formally measured yet.
+
+## The lesson
+
+*What did I learn?*
+
+This project strengthened how I translate business requirements into a modular Python workflow, and how I make that workflow usable through a simple app.
+
+I learned how geographic methodology changes targeting results, how bounding-box filtering speeds up the calculations, and how Streamlit can turn a Python script into something other people can use.
+
+**Next steps:** deploy the Streamlit app on the web so others can use it without running it locally; validate geographic accuracy; benchmark processing time; and explore support for a different radius per location.
