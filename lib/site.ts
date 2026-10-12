@@ -39,6 +39,7 @@ export const pillars = [
     line: "Tools, systems, and experiments.",
     title: "What I'm making.",
     intro: "Tools, systems, and experiments in Python, SQL, automation, and AI.",
+    portrait: { src: "", alt: "Portrait of Katrina Saya Webb", label: "Build portrait" }, // e.g. at a desk or laptop
     photo: { src: "/images/pillars/build.jpg", alt: "A snake plant and a cane chair beside a desk with a closed laptop, in late afternoon light", label: "Build — desk or laptop still life" },
   },
   {
@@ -48,6 +49,7 @@ export const pillars = [
     line: "Notes from the learning process.",
     title: "What I'm figuring out.",
     intro: "Notes on systems thinking, engineering concepts, debugging, and learning to build.",
+    portrait: { src: "", alt: "Portrait of Katrina Saya Webb", label: "Learn portrait" }, // e.g. reading or writing
     photo: { src: "/images/pillars/learn.jpg", alt: "An open kraft-paper notebook with a pen and a cup of black coffee on a dark marble table", label: "Learn — notebook or reading" },
   },
   {
@@ -57,6 +59,7 @@ export const pillars = [
     line: "Places, ideas, and everyday life.",
     title: "What inspires me.",
     intro: "Japan, travel, fashion, design, architecture, cities, and everyday observations.",
+    portrait: { src: "", alt: "Portrait of Katrina Saya Webb", label: "Live portrait" }, // e.g. travel or the city
     photo: { src: "/images/pillars/live.jpg", alt: "Rice fields seen through the window of a Japanese local train, above a red bench seat", label: "Live — Japan or travel" },
   },
   {
@@ -66,6 +69,12 @@ export const pillars = [
     line: "Independent projects and AWARÉ.",
     title: "What I'm bringing into the world.",
     intro: "Independent and creative projects. Right now, that means AWARÉ.",
+    portrait: {
+      src: "/images/founder-portrait.jpg",
+      focus: "50% 30%",
+      alt: "Portrait of Katrina Saya Webb in a black blazer against a white wall",
+      label: "Create portrait",
+    },
     photo: { src: "/images/pillars/create.jpg", alt: "A wall of indigo shibori-dyed cloths in wooden frames", label: "Create — AWARÉ object" },
   },
 ] satisfies Array<{
@@ -75,7 +84,8 @@ export const pillars = [
   line: string;
   title: string;
   intro: string;
-  photo: Photo;
+  portrait: Photo; // large photo of you at the top of the pillar page; "" = text-only header
+  photo: Photo; // small homepage thumbnail
 }>;
 
 export function getPillar(href: string) {
@@ -122,11 +132,5 @@ export const photos = {
     focus: "50% 22%",
     alt: "Black-and-white portrait of Katrina Saya Webb, laughing, seated in a dark coat",
     label: "About portrait — black and white",
-  },
-  create: {
-    src: "/images/founder-portrait.jpg",
-    focus: "50% 30%",
-    alt: "Portrait of Katrina Saya Webb in a black blazer against a white wall",
-    label: "Create portrait",
   },
 } satisfies Record<string, Photo>;

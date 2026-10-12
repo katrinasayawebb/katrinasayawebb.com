@@ -3,7 +3,8 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { PhotoSlot } from "@/components/PhotoSlot";
 import { Arrow } from "@/components/Arrow";
-import { getPillar, photos } from "@/lib/site";
+import { getPillar } from "@/lib/site";
+import { PillarHero } from "@/components/PillarHero";
 import { getEntries } from "@/lib/content";
 
 const pillar = getPillar("/create");
@@ -13,27 +14,10 @@ export default function CreatePage() {
   const [featured, ...others] = getEntries("create");
   return (
     <>
-      {/* Portrait left, title right, aligned to the bottom of the photo */}
-      <Container className="grid gap-10 pt-6 md:grid-cols-12 md:items-end md:pt-10">
-        <PhotoSlot
-          photo={photos.create}
-          priority
-          className="aspect-[4/5] md:col-span-5"
-          sizes="(min-width: 768px) 40vw, 100vw"
-        />
-        <header className="md:col-span-6 md:col-start-7 md:pb-4">
-          <p className="caps text-muted">
-            {pillar.number} {pillar.name}
-          </p>
-          <h1 className="mt-5 max-w-[12ch] font-serif text-[3.25rem] leading-[0.98] tracking-[-0.01em] md:text-[5rem]">
-            {pillar.title}
-          </h1>
-          <p className="mt-6 max-w-[44ch] text-[1.0625rem] leading-[1.7] text-espresso/85">{pillar.intro}</p>
-        </header>
-      </Container>
+      <PillarHero label={`${pillar.number} ${pillar.name}`} title={pillar.title} intro={pillar.intro} portrait={pillar.portrait} />
 
       {featured && (
-        <section aria-labelledby="featured-title" className="mt-28 md:mt-36">
+        <section aria-labelledby="featured-title" className="mt-12 md:mt-12">
           <Container>
             <div className="border-t border-taupe pt-12">
               <Link href={`/create/${featured.slug}`} className="group grid gap-10 lg:grid-cols-12 lg:items-end">

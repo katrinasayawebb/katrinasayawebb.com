@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
-import { PageIntro } from "@/components/PageIntro";
+import { PillarHero } from "@/components/PillarHero";
 import { EntryCard } from "@/components/EntryCard";
 import { EmptyArchive } from "@/components/EmptyArchive";
 import { getPillar } from "@/lib/site";
@@ -12,8 +12,9 @@ export const metadata: Metadata = { title: "Learn", description: pillar.intro };
 export default function LearnPage() {
   const entries = getEntries("learn");
   return (
-    <Container>
-      <PageIntro label={`${pillar.number} ${pillar.name}`} title={pillar.title} intro={pillar.intro} />
+    <>
+      <PillarHero label={`${pillar.number} ${pillar.name}`} title={pillar.title} intro={pillar.intro} portrait={pillar.portrait} />
+      <Container>
       {entries.length === 0 ? (
         <EmptyArchive what="notes" />
       ) : (
@@ -23,6 +24,7 @@ export default function LearnPage() {
           ))}
         </div>
       )}
-    </Container>
+      </Container>
+    </>
   );
 }
