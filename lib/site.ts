@@ -85,7 +85,12 @@ export function getPillar(href: string) {
 // Homepage AWARÉ feature (text comes from content/create/aware.mdx)
 export const aware = {
   href: "/create/aware",
-  photo: { src: "", alt: "", label: "AWARÉ feature — wide still life" },
+  photo: {
+    src: "/images/aware-feature.jpg",
+    alt: "A ceramic tea bowl and a wrapped furoshiki bag on a wooden table, cherry blossoms in the window behind",
+    label: "AWARÉ feature — wide still life",
+    focus: "50% 70%",
+  },
 };
 
 // About — homepage preview and the full /about page. DRAFT copy: edit freely.

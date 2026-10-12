@@ -38,7 +38,7 @@ export default async function CreateProject({ params }: Props) {
         </header>
       </Container>
       <Container className="mt-12">
-        <PhotoSlot photo={entry.photo} priority className="aspect-[16/8]" sizes="(min-width: 1440px) 1360px, 100vw" />
+        <PhotoSlot photo={entry.photo} priority className="aspect-[16/9]" sizes="(min-width: 1440px) 1360px, 100vw" />
       </Container>
       <Container className="mt-16 grid md:grid-cols-12">
         <div className="md:col-span-8 md:col-start-3">
