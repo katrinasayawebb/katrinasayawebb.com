@@ -17,8 +17,6 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: site.name,
     description: site.description,
-    // Preview image when a link is shared (LinkedIn, iMessage, Slack)
-    images: [{ url: "/images/hero-blue-sky.jpg", width: 1376, height: 1696, alt: "Katrina Saya Webb" }],
   },
   twitter: { card: "summary_large_image" },
 };
