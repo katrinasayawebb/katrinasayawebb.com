@@ -39,7 +39,7 @@ export const pillars = [
     line: "Tools, systems, and experiments.",
     title: "What I'm making.",
     intro: "Tools, systems, and experiments in Python, SQL, automation, and AI.",
-    photo: { src: "", alt: "", label: "Build — desk or laptop still life" },
+    photo: { src: "/images/pillars/build.jpg", alt: "A snake plant and a cane chair beside a desk with a closed laptop, in late afternoon light", label: "Build — desk or laptop still life" },
   },
   {
     number: "02",
@@ -48,7 +48,7 @@ export const pillars = [
     line: "Notes from the learning process.",
     title: "What I'm figuring out.",
     intro: "Notes on systems thinking, engineering concepts, debugging, and learning to build.",
-    photo: { src: "", alt: "", label: "Learn — notebook or reading" },
+    photo: { src: "/images/pillars/learn.jpg", alt: "An open kraft-paper notebook with a pen and a cup of black coffee on a dark marble table", label: "Learn — notebook or reading" },
   },
   {
     number: "03",
@@ -57,7 +57,7 @@ export const pillars = [
     line: "Places, ideas, and everyday life.",
     title: "What inspires me.",
     intro: "Japan, travel, fashion, design, architecture, cities, and everyday observations.",
-    photo: { src: "", alt: "", label: "Live — Japan or travel" },
+    photo: { src: "/images/pillars/live.jpg", alt: "Rice fields seen through the window of a Japanese local train, above a red bench seat", label: "Live — Japan or travel" },
   },
   {
     number: "04",
@@ -66,7 +66,7 @@ export const pillars = [
     line: "Independent projects and AWARÉ.",
     title: "What I'm bringing into the world.",
     intro: "Independent and creative projects. Right now, that means AWARÉ.",
-    photo: { src: "", alt: "", label: "Create — AWARÉ object" },
+    photo: { src: "/images/pillars/create.jpg", alt: "A wall of indigo shibori-dyed cloths in wooden frames", label: "Create — AWARÉ object" },
   },
 ] satisfies Array<{
   number: string;
