@@ -1,35 +1,42 @@
 ---
 title: AI Reporting Automation
-summary: An exploration of AI-assisted reporting workflows.
-tags: [AI, Automation]
-status: In progress
+summary: A Gemini-powered agent that turns a daily CSV metrics report into a readable summary. I scoped the requirements and validated the output.
+tags: [AI, Automation, Requirements]
 order: 3
-image: ""
+image: /images/build/ai-reporting-flow.png
+imageAlt: "Flow diagram: a daily CSV report goes to a Gemini summary agent, which returns readable insights; before, 30 to 90 minutes, after, about 5 minutes"
 imageLabel: Project image or screenshot
 github: ""
 ---
-
-{/*
-  Case study sections. When you are ready, move a heading out of this comment
-  and write underneath it. Each "## " heading becomes a numbered section and
-  appears in the index at the top of the page.
 
 ## The why
 
 *What problem was worth solving?*
 
+Operations team members received a daily CTA metrics report by email, as a CSV. Turning it into something useful meant manual conditional formatting and analysis: roughly 30 to 90 minutes, two to three times a week, across 30 team members.
+
+As Product and the AI implementation team looked for integration opportunities, I flagged this workflow as a practical use case: upload the report, get back a human-readable summary that helps people act quickly.
+
 ## The work
 
 *What did I build, and how?*
+
+I helped build a Gemini-powered reporting agent by translating an operational workflow into business requirements. I worked with Product to explain how the team used the report, how they interpreted its metrics, and which insights actually mattered.
+
+Gemini turns the uploaded CSV into a readable summary. My part was scoping the requirements, shaping the output, and giving and validating feedback. The AI implementation team handled the technical build.
 
 ## The win
 
 *What worked, and how do I know?*
 
+The agent cut the reporting workflow from roughly 30 to 90 minutes down to about five, which is 83 to 94 percent less time per analysis.
+
+I reviewed the summaries against how the team actually works, to make sure they matched operational needs. At the stated frequency across 30 people, that time reduction implies a potential saving of about 25 to 128 team hours per week.
+
 ## The lesson
 
 *What did I learn?*
 
-  Code blocks use three backticks with the language name, e.g. python.
-  Images: <Figure src="/images/build/your-image.png" alt="What it shows" caption="Optional" />
-*/}
+Useful AI reporting depends on clear business requirements and output people can understand. Translating how operations read CTA metrics into requirements is what shaped Gemini's summaries into something people could act on quickly.
+
+Next, I'd formalize a set of representative validation scenarios and track time savings and adoption, so the evidence for the agent's impact is measured rather than estimated.
