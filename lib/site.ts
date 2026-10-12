@@ -11,7 +11,7 @@ export type Photo = {
 
 export const site = {
   name: "Katrina Saya Webb",
-  url: "https://www.katrinasayawebb.com",
+  url: "https://katrinasayawebb.com",
   location: "San Francisco, California",
   tagline: "Work, ideas, and everything in between.",
   // The tagline as it breaks on the homepage hero (desktop). Mobile wraps naturally.
