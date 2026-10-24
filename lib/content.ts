@@ -20,6 +20,7 @@ export type Entry = {
   external: string; // set to a Substack URL to link out instead of hosting the text here
   order: number; // projects: lower shows first
   photo: Photo;
+  logo: string; // optional wordmark image shown in place of the title (create projects)
   headings: string[]; // the "## " headings in the body, for the case-study index
   body: string;
 };
@@ -51,6 +52,7 @@ function readEntry(pillar: Pillar, file: string): Entry & { draft: boolean } {
       label: String(data.imageLabel ?? "Image"),
       focus: data.imageFocus ? String(data.imageFocus) : undefined,
     },
+    logo: String(data.logo ?? ""),
     headings,
     body: content,
     draft: data.draft === true,

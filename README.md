@@ -16,4 +16,3 @@ npm run build      # production check
 - `components/` — Header, Footer, PhotoSlot, ProjectCard, SectionHeading
 - `public/images/` — put your photos here, then set `src: "/images/your-file.jpg"` in `lib/site.ts`
 
-Status: homepage only. Pillar pages, case studies, About, and AWARÉ come after homepage approval.

@@ -5,7 +5,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Arrow } from "@/components/Arrow";
 import { EntryCard } from "@/components/EntryCard";
-import { about, aware, links, photos, pillars, site } from "@/lib/site";
+import { about, saewa, links, photos, pillars, site } from "@/lib/site";
 import { getEntries, getEntry, getRecentWriting } from "@/lib/content";
 
 // Left edge of hero text lines up with the page container even though the photo bleeds to the window edge.
@@ -14,7 +14,7 @@ const alignToContainer = "px-6 md:px-10 lg:pr-12 lg:pl-[max(2.5rem,calc((100vw-1
 export default function Home() {
   const projects = getEntries("build").slice(0, 3);
   const writing = getRecentWriting(3);
-  const awareEntry = getEntry("create", "aware");
+  const saewaEntry = getEntry("create", "saewa");
   return (
     <>
       {/* Hero: text left, portrait bleeding off the right edge */}
@@ -129,19 +129,19 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* AWARÉ feature */}
-      <section aria-labelledby="aware-title" className="mt-28 md:mt-36">
+      {/* SÆWA feature */}
+      <section aria-labelledby="saewa-title" className="mt-28 md:mt-36">
         <Container className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:order-2 lg:col-span-8">
-            <PhotoSlot photo={aware.photo} className="aspect-[16/10]" sizes="(min-width: 1024px) 62vw, 100vw" />
+            <PhotoSlot photo={saewa.photo} className="aspect-[16/10]" sizes="(min-width: 1024px) 62vw, 100vw" />
           </div>
           <div className="lg:order-1 lg:col-span-4 lg:pb-2">
             <p className="caps text-muted">04 Create</p>
-            <h2 id="aware-title" className="mt-4 font-serif text-[2.75rem] leading-none md:text-[3.5rem]">
-              Building AWARÉ.
+            <h2 id="saewa-title" className="mt-4 font-serif text-[2.75rem] leading-none md:text-[3.5rem]">
+              Building SÆWA.
             </h2>
-            <p className="mt-6 max-w-[36ch] text-[1rem] leading-relaxed text-espresso/85">{awareEntry?.summary}</p>
-            <Link href={aware.href} className="caps quiet-link mt-8 inline-flex items-center gap-2">
+            <p className="mt-6 max-w-[36ch] text-[1rem] leading-relaxed text-espresso/85">{saewaEntry?.summary}</p>
+            <Link href={saewa.href} className="caps quiet-link mt-8 inline-flex items-center gap-2">
               Follow the project <Arrow />
             </Link>
           </div>

@@ -19,7 +19,7 @@ export const site = {
   intro:
     "I'm Katrina. I work with data, technology, and business systems. Here you'll find the things I'm building, what I'm learning, and the places and ideas that inspire me.",
   description:
-    "Katrina Saya Webb — data, technology, and business systems, plus writing on Japan, design, and AWARÉ.",
+    "Katrina Saya Webb — data, technology, and business systems, plus writing on Japan, design, and SÆWA.",
 };
 
 export const links = {
@@ -81,16 +81,16 @@ export const pillars = [
     number: "04",
     name: "Create",
     href: "/create",
-    line: "Independent projects and AWARÉ.",
+    line: "Independent projects and SÆWA.",
     title: "What I'm bringing into the world.",
-    intro: "Independent and creative projects. Right now, that means AWARÉ.",
+    intro: "Independent and creative projects. Right now, that means SÆWA.",
     portrait: {
       src: "",
       focus: "50% 30%",
       alt: "Portrait of Katrina Saya Webb in a black blazer against a white wall",
       label: "Create portrait",
     },
-    photo: { src: "/images/pillars/create.jpg", alt: "A wall of indigo shibori-dyed cloths in wooden frames", label: "Create — AWARÉ object" },
+    photo: { src: "/images/pillars/create.jpg", alt: "A wall of indigo shibori-dyed cloths in wooden frames", label: "Create — SÆWA object" },
   },
 ] satisfies Array<{
   number: string;
@@ -107,13 +107,13 @@ export function getPillar(href: string) {
   return pillars.find((p) => p.href === href)!;
 }
 
-// Homepage AWARÉ feature (text comes from content/create/aware.mdx)
-export const aware = {
-  href: "/create/aware",
+// Homepage SÆWA feature (text comes from content/create/saewa.mdx)
+export const saewa = {
+  href: "/create/saewa",
   photo: {
-    src: "/images/aware-feature.jpg",
+    src: "/images/saewa-feature.jpg",
     alt: "A ceramic tea bowl and a wrapped furoshiki bag on a wooden table, cherry blossoms in the window behind",
-    label: "AWARÉ feature — wide still life",
+    label: "SÆWA feature — wide still life",
     focus: "50% 70%",
   },
 };

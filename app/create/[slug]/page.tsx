@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
 import { PhotoSlot } from "@/components/PhotoSlot";
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return e ? { title: e.title, description: e.summary } : {};
 }
 
-// A creative project page (AWARÉ first). Sections come from the MDX file.
+// A creative project page (SÆWA first). Sections come from the MDX file.
 export default async function CreateProject({ params }: Props) {
   const entry = getEntry("create", (await params).slug);
   if (!entry) notFound();
@@ -31,7 +32,13 @@ export default async function CreateProject({ params }: Props) {
           <Arrow className="rotate-180" /> Create
         </Link>
         <header className="mt-10 grid gap-6 md:grid-cols-12 md:items-end">
-          <h1 className="font-serif text-[3.5rem] leading-[0.95] md:col-span-7 md:text-[6.5rem]">{entry.title}</h1>
+          {entry.logo ? (
+            <h1 className="md:col-span-7">
+              <Image src={entry.logo} alt={entry.title} width={1027} height={327} priority className="h-auto w-full max-w-[560px]" />
+            </h1>
+          ) : (
+            <h1 className="font-serif text-[3.5rem] leading-[0.95] md:col-span-7 md:text-[6.5rem]">{entry.title}</h1>
+          )}
           <p className="max-w-[40ch] text-[1.0625rem] leading-[1.7] text-espresso/85 md:col-span-5 md:pb-3">
             {entry.summary}
           </p>

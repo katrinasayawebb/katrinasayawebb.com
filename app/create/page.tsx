@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { PhotoSlot } from "@/components/PhotoSlot";
 import { Arrow } from "@/components/Arrow";
@@ -31,7 +32,11 @@ export default function CreatePage() {
                     id="featured-title"
                     className="font-serif text-[2.75rem] leading-none decoration-1 underline-offset-[8px] group-hover:underline md:text-[3.5rem]"
                   >
-                    {featured.title}
+                    {featured.logo ? (
+                      <Image src={featured.logo} alt={featured.title} width={1027} height={327} className="h-auto w-full max-w-[340px]" />
+                    ) : (
+                      featured.title
+                    )}
                   </h2>
                   <p className="mt-6 max-w-[36ch] text-[1rem] leading-relaxed text-espresso/85">{featured.summary}</p>
                   <span className="caps mt-8 inline-flex items-center gap-2">
